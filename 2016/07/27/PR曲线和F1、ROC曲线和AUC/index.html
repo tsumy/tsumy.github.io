@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tsumy&#39;blog</title>
+  <title>test code view | tsumy&#39;blog</title>
   <meta name="author" content="tsumy">
+  
+  <meta name="description" content="最近阅读机器学习，在评估学习器的性能时，书中提到了P、R、F1值度量和ROC曲线和AUC值度量。
+P、R、F1               预测结果            正例      反例            真实情况      正例      TP（真正例）      FN（假反例）    ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="test code view"/>
   <meta property="og:site_name" content="tsumy&#39;blog"/>
 
   
@@ -84,52 +87,32 @@
 
   <div class="container">
   	<div class="content">
-    	 <div class="page-header page-header-inverse ">
-  <h1 class="title title-inverse ">tsumy&#39;blog</h1>
-</div>
+    	 
 
-<div class="row page">
 
 	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> test code view</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
 	<div class="col-md-9">
 	
 
-		<div class="slogan">
-      <i class="fa fa-heart"></i>
-      Yet another bootstrap theme.
-</div>    
-		<div id="top_search"></div>
-		<div class="mypage">
-		
-		<!-- title and entry -->
-        <!-- render top articles firstly -->
-        
-		
-            
-		
-            
-		
-            
-		
-        
-        <!-- render other articles -->
-        
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2016-07-27 </div>
-			<div class="article-title"><a href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/" >test code view</a></div>						
-		</h3>
-	
+	<!-- content -->
+	<div class="mypage">		
+	  		
 
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>最近阅读<a href="https://book.douban.com/subject/26708119/" target="_blank" rel="external">机器学习</a>，在评估学习器的性能时，书中提到了P、R、F1值度量和ROC曲线和AUC值度量。</p>
+	  <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>最近阅读<a href="https://book.douban.com/subject/26708119/" target="_blank" rel="external">机器学习</a>，在评估学习器的性能时，书中提到了P、R、F1值度量和ROC曲线和AUC值度量。</p>
 <h2 id="P、R、F1"><a href="#P、R、F1" class="headerlink" title="P、R、F1"></a>P、R、F1</h2><table><br>   <tr><br>      <td rowspan="2" colspan="2"></td><br>      <td colspan="2" align="center" valign="middle">预测结果</td><br>   </tr><br>   <tr><br>      <td>正例</td><br>      <td>反例</td><br>   </tr><br>   <tr><br>      <td rowspan="2" align="center">真实情况</td><br>      <td>正例</td><br>      <td>TP（真正例）</td><br>      <td>FN（假反例）</td><br>   </tr><br>   <tr><br>      <td>反例</td><br>      <td>FP（假正例）</td><br>      <td>TN（真反例）</td><br>   </tr><br></table>
 
 <p>P（查准率）：$$P=\frac{TP}{TP+FP}$$   &nbsp;&nbsp;即预测结果中真正的正例的比例。<br>R（查全率）：$$R=\frac{TP}{TP+FN}$$ &nbsp;&nbsp; 即所有正例中被正确预测出来的比例。<br>如图：<br><img src="http://img.blog.csdn.net/20160721110819888" width="600" height="800" alt="图片" align="center"><br>P-R 曲线：<br>在机器学习中分类器往往输出的不是类别标号，而是属于某个类别的概率值，根据分类器的预测结果从大到小对样例进行排序，逐个把样例加入正例进行预测，算出此时的P、R值。<br><img src="http://img.blog.csdn.net/20160721114615857" width="600" height="600" align="center"><br>如上图：<br>真实情况正例反例各有10个。<br>先用分数（score）：0.9作为阈值（大于等于1为正例，小于1为反例），此时TP=1，FP=0，FN=9，故P=1，R=0.1。<br>用0.8作为阈值，P=1，R=0.2。<br>用0.7作为阈值，P=0.67，R=0.2。<br> 用0.6作为阈值，P=0.75，R=0.3。<br> 以此类推。。。<br>最后得到一系列P、R值序列，就画出P-R曲线（示意图，不对应上面数据）：<br><img src="http://img.blog.csdn.net/20160721111312507" width="600" height="600" alt="1" align="center"><br>P-R 曲线越靠近右上角性能越好。</p>
@@ -137,193 +120,96 @@
 <h2 id="ROC曲线和AUC"><a href="#ROC曲线和AUC" class="headerlink" title="ROC曲线和AUC"></a>ROC曲线和AUC</h2><p>和P-R曲线类似，ROC曲线用FPR（假正例率）作横轴，用TPR（真正例率）作纵轴，其中：<br>$FPR=\frac{FP}{TN+FP}$<br>$TPR=\frac{TP}{TP+FN}$<br>同样用上面的数据，<br>用0.9作为阈值，此时TP=1，FP=0，FN=9，TN=10，故TPR=0.1，FPR=0。<br>用0.8作为阈值，此时TP=2，FP=0，FN=8，TN=10，故TPR=0.2，FPR=0。<br>用0.7作为阈值，此时TP=2，FP=1，FN=8，TN=9，故TPR=0.2，FPR=0.1。<br>用0.6作为阈值，此时TP=3，FP=1，FN=7，TN=9，故TPR=0.3，FPR=0.1。<br> 以此类推。。。<br> 最后的ROC曲线如下图：<br><img src="http://img.blog.csdn.net/20160721130527173" width="600" height="600" alt="1" align="center"><br>AUC的值就是ROC曲线下方围成区域的面积大小。</p>
 <h2 id="PR曲线和ROC曲线的关系"><a href="#PR曲线和ROC曲线的关系" class="headerlink" title="PR曲线和ROC曲线的关系"></a>PR曲线和ROC曲线的关系</h2><p>PR曲线和ROC曲线都能评价分类器的性能。如果分类器a的PR曲线或ROC曲线包围了分类器b对应的曲线，那么分类器a的性能好于分类器b的性能。<br>PR曲线和ROC曲线有什么联系和不同：<br>相同点：<br>首先从定义上PR曲线的R值是等于ROC曲线中的TPR值。<br>都是用来评价分类器的性能的。<br>不同点：<br>ROC曲线是单调的而PR曲线不是（根据它能更方便调参），可以用AUC的值得大小来评价分类器的好坏（是否可以用PR曲线围成面积大小来评价呢？）。<br>正负样本的分布失衡的时候，ROC曲线保持不变，而PR曲线会产生很大的变化。<br><img src="http://img.blog.csdn.net/20160721141617579" width="800" height="800" alt="1" align="center"><br>（a）（b）分别是正反例相等的时候的ROC曲线和PR曲线<br>（c）（d）分别是十倍反例一倍正例的ROC曲线和PR曲线<br>可以看出，在正负失衡的情况下，从ROC曲线看分类器的表现仍然较好（图c），然而从PR曲线来看，分类器就表现的很差。<br>事实情况是分类器确实表现的不好（分析过程见<a href="https://www.zhihu.com/question/30643044/answer/64151574?from=profile_answer_card" target="_blank" rel="external">知乎 qian lv 的回答</a>），是ROC曲线欺骗了我们。</p>
 <p>参考资料：<br><a href="http://alexkong.net/2013/06/introduction-to-auc-and-roc/" target="_blank" rel="external">http://alexkong.net/2013/06/introduction-to-auc-and-roc/</a><br><a href="https://www.zhihu.com/question/30643044" target="_blank" rel="external">https://www.zhihu.com/question/30643044</a><br><a href="https://en.wikipedia.org/wiki/Precision_and_recall" target="_blank" rel="external">https://en.wikipedia.org/wiki/Precision_and_recall</a><br><a href="http://autonlab.org/icml_documents/camera-ready/030_The_Relationship_Bet.pdf" target="_blank" rel="external">Jesse Davis，Mark Goadrich：The Relationship Between Precision-Recall and ROC Curves</a><br><!-- http://www.dxy.cn/bbs/thread/30341846#30341846  多维--><br><!-- https://disqus.com/by/nerodong/ --></p>
-
-	
+	  
 	</div>
-  <a type="button" href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/#more" class="btn btn-default more">Read More</a>
-</div>
 
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2016-07-27 </div>
-			<div class="article-title"><a href="/2016/07/27/post/" >post</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h1 id="6-ZigZag-Conversion"><a href="#6-ZigZag-Conversion" class="headerlink" title="6. ZigZag Conversion"></a>6. ZigZag Conversion</h1><p><a href="https://leetcode.com/problems/zigzag-conversion/" target="_blank" rel="external">Leetcode link for this question</a></p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>The string <code>“PAYPALISHIRING”</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)<br></p><pre>P   A   H   N<br>A P L S I I G<br>Y   I   R<br></pre><p></p>
-<p>And then read line by line: <code>“PAHNAPLSIIGYIR”</code></p><p></p><p></p>
-<p><br>Write the code that will take a string and make this conversion given a number of rows:<br><br></p><pre>string convert(string text, int nRows);</pre><br><br><code>convert(“PAYPALISHIRING”, 3)</code> should return <code>“PAHNAPLSIIGYIR”</code>.<br><p></p><p></p>            
-
-
-<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><p>If nRows=4, text=abcdefghijklmnop</p>
-<pre> 
-row 1:a   g   m
-row 2:b f h l n
-row 3:c e i k o
-row 4:d   j   p      return row 1 + row 2 + row 3 +row 4 ,i.e. return agm bfhln ceiko djp
-
-so,assigned order is：row 1, row 2, row 3, row 4, row 3, row 2, row 1,row 2, row 3 etc.
-the ith char in text will assigned to the row which NO. is the value of the ith index of the above list. 
-</pre>
-
-<h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
-    def convert(self, s, numRows):
-        &quot;&quot;&quot;
-        :type s: str
-        :type numRows: int
-        :rtype: str
-        &quot;&quot;&quot;
-        if numRows==1:
-            return s
-
-        li=[&apos;&apos;]*numRows
-        po=-1
-        dir=1
-        for i in s:
-            if dir:
-                po+=1
-                li[po]=li[po]+i
-                if po==numRows-1:
-                    dir=0
-            else:
-                po-=1
-                li[po]=li[po]+i
-                if po==0:
-                    dir=1
-        return &apos;&apos;.join(li)           
-</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 112 ms<br>Ranking: beats <font color="#0099ff" size="5" face="黑体">92.15%</font></p>
-
-	
-	</div>
-  <a type="button" href="/2016/07/27/post/#more" class="btn btn-default more">Read More</a>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2016-07-27 </div>
-			<div class="article-title"><a href="/2016/07/27/hello-world/" >Hello World</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-	
-	</div>
-  <a type="button" href="/2016/07/27/hello-world/#more" class="btn btn-default more">Read More</a>
-</div>
-
-           
-		
-
-		</div>
-
-		<!-- pagination -->
-		<div>
-  		<center>
-		<div class="pagination">
+	<div>
+  	<center>
+	<div class="pagination">
 <ul class="pagination">
 	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2016/07/27/post/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
 </ul>
 </div>
 
-  		</center>
-		</div>
+    </center>
+	</div>
 
-		
-		
-	</div> <!-- col-md-9 -->
-
-	
-		<div class="col-md-3">
-	<div id="sidebar">
-	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
-
-
-		
-			
-		
-			
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
+    <!-- share -->
     
-      <li>
-        <a href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/" ><i class="fa fa-file-o"></i>test code view</a>
-      </li>
-    
-      <li>
-        <a href="/2016/07/27/post/" ><i class="fa fa-file-o"></i>post</a>
-      </li>
-    
-      <li>
-        <a href="/2016/07/27/hello-world/" ><i class="fa fa-file-o"></i>Hello World</a>
-      </li>
-    
-  </ul>
-</div>
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
 
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
 		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
-	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/wzpan" title="My Github account." target="_blank"]);">My Github</a></li>
-	
-		<li><i class="fa fa-linkedin"></i><a href="http://www.linkedin.com/in/hahack" title="My Linkin account." target="_blank"]);">My LinkedIn</a></li>
-	
-	</ul>
-</div>
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
 
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-07-27 
+	</div>
+	
 
+	<!-- categories -->
+    
+
+	<!-- tags -->
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
 
+	<!-- toc -->
+	<div class="meta-widget">
 	
+	</div>
 	
-</div> <!-- row-fluid -->
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
 
 
 	</div>
