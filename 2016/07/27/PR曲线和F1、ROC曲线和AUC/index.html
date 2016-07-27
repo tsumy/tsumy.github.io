@@ -22,7 +22,7 @@ P（查准率）：$$">
 <meta property="og:image" content="http://img.blog.csdn.net/20160721111312507">
 <meta property="og:image" content="http://img.blog.csdn.net/20160721130527173">
 <meta property="og:image" content="http://img.blog.csdn.net/20160721141617579">
-<meta property="og:updated_time" content="2016-07-27T05:05:13.156Z">
+<meta property="og:updated_time" content="2016-07-27T09:06:20.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test code view">
 <meta name="twitter:description" content="最近阅读机器学习，在评估学习器的性能时，书中提到了P、R、F1值度量和ROC曲线和AUC值度量。
@@ -159,7 +159,7 @@ P（查准率）：$$">
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ML/" style="font-size: 10px;">ML</a> <a href="/tags/ROC/" style="font-size: 10px;">ROC</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/标签1/" style="font-size: 10px;">标签1</a> <a href="/tags/标签2/" style="font-size: 10px;">标签2</a>
+                        <a href="/tags/ML/" style="font-size: 10px;">ML</a> <a href="/tags/ROC/" style="font-size: 10px;">ROC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
                     </div>
                 </section>
                 
@@ -265,7 +265,7 @@ P（查准率）：$$">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>最近阅读<a href="https://book.douban.com/subject/26708119/" target="_blank" rel="external">机器学习</a>，在评估学习器的性能时，书中提到了P、R、F1值度量和ROC曲线和AUC值度量。</p>
+        <p>最近阅读<a href="https://book.douban.com/subject/26708119/" target="_blank" rel="external">机器学习</a>，在评估学习器的性能时，书中提到了P、R、F1值度量和ROC曲线和AUC值度量。</p>
 <h2 id="P、R、F1"><a href="#P、R、F1" class="headerlink" title="P、R、F1"></a>P、R、F1</h2><table><br>   <tr><br>      <td rowspan="2" colspan="2"></td><br>      <td colspan="2">预测结果</td><br>   </tr><br>   <tr><br>      <td>正例</td><br>      <td>反例</td><br>   </tr><br>   <tr><br>      <td rowspan="2">真实情况</td><br>      <td>正例</td><br>      <td>TP（真正例）</td><br>      <td>FN（假反例）</td><br>   </tr><br>   <tr><br>      <td>反例</td><br>      <td>FP（假正例）</td><br>      <td>TN（真反例）</td><br>   </tr><br></table>
 
 <p>P（查准率）：$$P=\frac{TP}{TP+FP}$$   &nbsp;&nbsp;即预测结果中真正的正例的比例。<br>R（查全率）：$$R=\frac{TP}{TP+FN}$$ &nbsp;&nbsp; 即所有正例中被正确预测出来的比例。<br>如图：<br><img src="http://img.blog.csdn.net/20160721110819888" width="500" height="600" alt="图片" align="center"><br>P-R 曲线：<br>在机器学习中分类器往往输出的不是类别标号，而是属于某个类别的概率值，根据分类器的预测结果从大到小对样例进行排序，逐个把样例加入正例进行预测，算出此时的P、R值。<br><img src="http://img.blog.csdn.net/20160721114615857" width="400" height="400" align="center"><br>如上图：<br>真实情况正例反例各有10个。<br>先用分数（score）：0.9作为阈值（大于等于1为正例，小于1为反例），此时TP=1，FP=0，FN=9，故P=1，R=0.1。<br>用0.8作为阈值，P=1，R=0.2。<br>用0.7作为阈值，P=0.67，R=0.2。<br> 用0.6作为阈值，P=0.75，R=0.3。<br> 以此类推。。。<br>最后得到一系列P、R值序列，就画出P-R曲线（示意图，不对应上面数据）：<br><img src="http://img.blog.csdn.net/20160721111312507" width="500" height="500" alt="1" align="center"><br>P-R 曲线越靠近右上角性能越好。</p>
@@ -284,7 +284,7 @@ P（查准率）：$$">
         <p><span>本文标题:</span><a href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/">test code view</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tsumy 的个人博客">tsumy</a></p>
         <p><span>发布时间:</span>2016年07月27日 - 10时38分</p>
-        <p><span>最后更新:</span>2016年07月27日 - 13时05分</p>
+        <p><span>最后更新:</span>2016年07月27日 - 17时06分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/" title="test code view">http://tsumy.site/2016/07/27/PR曲线和F1、ROC曲线和AUC/</a>
             <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/2016/07/27/PR曲线和F1、ROC曲线和AUC/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -404,7 +404,7 @@ P（查准率）：$$">
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/record/">record</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/test2/">test2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/">test code view</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/post/">post</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/hexo record/">用hexo建立个人博客（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/test2/">test2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/PR曲线和F1、ROC曲线和AUC/">test code view</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/post/">post</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
