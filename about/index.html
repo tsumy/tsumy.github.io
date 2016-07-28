@@ -153,7 +153,7 @@
                 
                 <section class="switch-part switch-part3">
                 
-                    <div id="js-aboutme">待添加</div>
+                    <div id="js-aboutme">我就是我。</div>
                 </section>
                 
             </div>
@@ -380,8 +380,8 @@
 
     <script>
         $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            var backgroundnum = 7;
+            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
             $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
             $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
         })
