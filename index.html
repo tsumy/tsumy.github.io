@@ -240,7 +240,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。<br>过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，<br>真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，<br>要么是markdown的功能不好用，对图片和公示支持的不好，反正就是各种限制吧，所以又萌生了<br>自己搭一个博客的想法。有想法就要马上行动，对比了Jekyll和Octopress等静态博客生成器最终选择了Hexo（<a href="https://www.zhihu.com/question/21981094">参见知乎回答</a>）。<br>Hexo是一个<em>快速、简洁且高效的博客框架</em>，作者是一个台湾人（<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">Hexo 诞生记</a>），最大的特点就是简洁、快速，<br>而这也正是我所需要的（Hexo有<a href="https://hexo.io/zh-cn/docs/">中文文档</a>也是一个优点吧）。<br>想要用Hexo搭建博客的过程最好还是去看官方文档，这里只是对我自己搭建博客的过程做一个记录。<br><!--以上是摘要--><br>
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。<br>过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，<br>真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，<br><!--以上是摘要--><br>
           
       
     </div>
@@ -376,25 +376,15 @@
     </div>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
-<% if (theme.background.on){ %>
+
     <script>
-        $(document).ready(function() {
-            var backgroundnum = <%= theme.background.background_sum %>;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+        $(document).ready(function() {            
+            var backgroundimg = "url(/img/bg" +".jpg)";
             $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
             $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
         })
     </script>
-<% } else { %>
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = <%= theme.background.background_image %>;
-            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-<% } %>
+
 
 
 
