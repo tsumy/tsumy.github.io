@@ -8,12 +8,12 @@
   <meta name="description" content="前言去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo + github page 搭建个人博客">
-<meta property="og:url" content="http://tsumy.site/2016/07/28/hexo record/index.html">
+<meta property="og:url" content="http://tsumy.site/hexo record/index.html">
 <meta property="og:site_name" content="tsumy'blog">
 <meta property="og:description" content="前言去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，">
 <meta property="og:image" content="http://ob05dsir4.bkt.clouddn.com/Hexotest.PNG">
 <meta property="og:image" content="http://ob05dsir4.bkt.clouddn.com/sshkey.PNG">
-<meta property="og:updated_time" content="2016-07-28T14:32:44.304Z">
+<meta property="og:updated_time" content="2016-07-29T10:02:07.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo + github page 搭建个人博客">
 <meta name="twitter:description" content="前言去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，">
@@ -145,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/github-page/" style="font-size: 10px;">github page</a>
+                        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/coding/" style="font-size: 10px;">coding</a> <a href="/tags/github-page/" style="font-size: 10px;">github page</a>
                     </div>
                 </section>
                 
@@ -218,7 +218,7 @@
       <div class="body-wrap"><article id="post-hexo record" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/28/hexo record/" class="article-date">
+      <a href="/hexo record/" class="article-date">
       <time datetime="2016-07-28T06:38:46.000Z" itemprop="datePublished">2016-07-28</time>
 </a>
     </div>
@@ -247,7 +247,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-page/">github page</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/coding/">coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-page/">github page</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -271,15 +271,19 @@
 <p>把Hexo目录的_config.yml中theme: landscape 项改为 theme: spfk<br>然后进入 themes/spfk 文件夹中，更改主题的配置文件，主要改了menu的几个选项，duoshuo的domain内容。</p>
 <h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>写文章之前先去scaffolds文件夹中更改一下post模板文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">description: #文章描述</div><div class="line">categories: #文章分类</div><div class="line">- 这是分类</div><div class="line">tags: #文章标签</div><div class="line">- 标签1</div><div class="line">- 标签2</div><div class="line">toc: true #生成目录</div><div class="line">author:</div><div class="line">comments:</div><div class="line">original:</div><div class="line">permalink: #指定链接</div><div class="line">---</div><div class="line"></div><div class="line"></div><div class="line">&lt;!--以上是摘要--&gt;</div><div class="line">&lt;!--more--&gt;</div><div class="line">&lt;!--以下是余下全文--&gt;</div></pre></td></tr></table></figure></p>
 <p>然后输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo n post newpost</div></pre></td></tr></table></figure></p>
-<p>hexo会在source目录下，自动生成一个newpost.md文件，并且文章的属性也已经安装模板样式自动填写了。然后只需要在newpost.md写入正文和更改一些属性就行了。<br>以上内容只需要在本地<a href="http://localhost:4000/地址就能查看博客的效果，下面介绍怎样部署到github，利用github" target="_blank" rel="external">http://localhost:4000/地址就能查看博客的效果，下面介绍怎样部署到github，利用github</a> page来访问博客。</p>
-<h3 id="github-page"><a href="#github-page" class="headerlink" title="github page"></a>github page</h3><p>首先要申请一个github账号，然后在自己的github中新建一个项目（Create a new repository）,<strong>注意</strong>：项目名称只能填写github的账户名.github.io。为了避免每次提交代码的时候都要输入github的用户名和密码，需要为github添加SHH key。<br>运行 git Bash，输入下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">ls</div></pre></td></tr></table></figure></p>
+<p>hexo会在source目录下，自动生成一个newpost.md文件，并且文章的属性也已经安装模板样式自动填写了。然后只需要在newpost.md写入正文和更改一些属性就行了。<br>以上内容只需要在本地使用 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 地址就能查看博客的效果，下面介绍怎样部署到github，利用github page来访问博客。</p>
+<h2 id="github-page"><a href="#github-page" class="headerlink" title="github page"></a>github page</h2><p>首先要申请一个github账号，然后在自己的github中新建一个项目（Create a new repository）,<strong>注意</strong>：项目名称只能填写github的账户名.github.io。为了避免每次提交代码的时候都要输入github的用户名和密码，需要为github添加SHH key。<br>运行 git Bash，输入下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">ls</div></pre></td></tr></table></figure></p>
 <p>如果已经存在id_rsa.pub 或 id_dsa.pub，那么可以跳过创建SSH key，直接把SSH key添加到github中。<br>如果不存在，那么需要创建一个SSH key。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;你的注释名字，可以是邮箱地址或者电脑名等&quot;</div></pre></td></tr></table></figure></p>
 <p>接下来几步，一直按回车就行了，如果出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># The key fingerprint is:</div><div class="line"># 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</div></pre></td></tr></table></figure></p>
 <p>就说明已经创建成功了。用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clip &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
 <p>把SHH key复制到剪贴板中，接下来打开github个人账户的设置选项，把SHH key添加到github账户中。<img src="http://ob05dsir4.bkt.clouddn.com/sshkey.PNG" alt=""><br>修改Hexo的_config.yml文件，填写部署的方式和地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo:</div><div class="line">  github:git@github.com:yourname.github.io.git,master</div></pre></td></tr></table></figure></p>
-<p>##域名</p>
-<h3 id="多部署"><a href="#多部署" class="headerlink" title="多部署"></a>多部署</h3><p>##后记</p>
-<p>接下来的工作：搜索功能，笔记，使用图床，做好备份工作<br>参考：<br><a href="http://www.jianshu.com/p/73779eacb494" target="_blank" rel="external">http://www.jianshu.com/p/73779eacb494</a><br><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">http://opiece.me/2015/04/09/hexo-guide/</a><br><a href="http://www.jianshu.com/p/7ad9d3cd4d6e" target="_blank" rel="external">http://www.jianshu.com/p/7ad9d3cd4d6e</a><br><a href="http://shenzhenwei.coding.me/2016/04/25/%E5%A6%82%E4%BD%95%E5%B0%86HexoBlog%E5%90%8C%E6%97%B6%E5%8F%91%E5%B8%83%E5%88%B0GitHub%E8%B7%9FCoding%E4%B8%8A/" target="_blank" rel="external">http://shenzhenwei.coding.me/2016/04/25/%E5%A6%82%E4%BD%95%E5%B0%86HexoBlog%E5%90%8C%E6%97%B6%E5%8F%91%E5%B8%83%E5%88%B0GitHub%E8%B7%9FCoding%E4%B8%8A/</a></p>
+<p>输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g</div></pre></td></tr></table></figure></p>
+<p>如果没有报错，你的博客已经顺利的部署到了github上了。你可以通过在浏览器中输入yourname.github.io这个地址进行访问。</p>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>虽然可以通过github.io已经可以正常访问博客了，但是还想继续折腾，去弄个域名才像个真正的个人博客。登陆<a href="https://sg.godaddy.com/zh" target="_blank" rel="external">GoDaddy</a>，注册完账户，去搜索了一下，选了一个最便宜的域名，选择支付宝付款（注意：推广的附加服务可不要乱选哦）。不到十分钟，我就拥有一个域名了（虽然只有一年时间而已）。去网上查了一下，说是Godaddy的域名服务器不是很好用，于是 <del>注册了一个</del> 可以直接用QQ账号登陆<a href="https://www.dnspod.cn/" target="_blank" rel="external">dnspod</a>，加入了刚买的域名，把这个域名解析到github.io的服务器地址（可以用ping自己的name.github.io来得到服务器IP）。把Godaddy默认的DNS服务器改成dnspod的DNS服务器。最后还要在自己github.io根目录下新建一个CNAME文件，把域名写到这个文件。等待1，2小时，就可以用成功用域名访问博客了。</p>
+<h2 id="多部署"><a href="#多部署" class="headerlink" title="多部署"></a>多部署</h2><p>由于各种原因，github服务器的访问速度不是很快（有时候还会抽风访问不了），为了提高博客的访问速度，可以使用<del>国内的</del>（服务器不在国内，而是在香港，但访问速度仍然比github快不少）<a href="https://coding.net" target="_blank" rel="external">coding</a>作为我们的博客服务器。coding和github类似，提供代码托管服务同时也提供pages服务，具体使用说明参考<a href="https://coding.net/help/doc/pages/index.html" target="_blank" rel="external">Coding Pages 介绍</a>。想要同时使用他们的服务器也是可以的。为了提交时不用输入账号和密码，参考之前给github 添加SHH key的做法，需要把本机的SHH key添加到coding账号中，在本地Hexo文件夹的_config.yml中写入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:     </div><div class="line">        github: git@github.com:githubname/githubname.github.io.git,master</div><div class="line">        coding: git@git.coding.net:codingname/codingname.git,coding-pages</div></pre></td></tr></table></figure></p>
+<p>保存之后，使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>命令，Hexo会自动把博客部署到github和coding。当然，还要更改dnspod的设置，加入一条解析规则，把从国内访问域名的请求，解析到coding的服务器上。<br>现在再用域名访问博客，那速度真是相当的快呀。</p>
+<p>参考：<br><a href="http://www.jianshu.com/p/73779eacb494" target="_blank" rel="external">http://www.jianshu.com/p/73779eacb494</a><br><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">http://opiece.me/2015/04/09/hexo-guide/</a><br><a href="http://www.jianshu.com/p/7ad9d3cd4d6e" target="_blank" rel="external">http://www.jianshu.com/p/7ad9d3cd4d6e</a><br><a href="http://shenzhenwei.coding.me/2016/04/25/%E5%A6%82%E4%BD%95%E5%B0%86HexoBlog%E5%90%8C%E6%97%B6%E5%8F%91%E5%B8%83%E5%88%B0GitHub%E8%B7%9FCoding%E4%B8%8A/" target="_blank" rel="external">http://shenzhenwei.coding.me</a></p>
 
       
     </div>
@@ -288,13 +292,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/28/hexo record/">使用Hexo + github page 搭建个人博客</a></p>
+        <p><span>本文标题:</span><a href="/hexo record/">使用Hexo + github page 搭建个人博客</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tsumy 的个人博客">tsumy</a></p>
         <p><span>发布时间:</span>2016年07月28日 - 14时38分</p>
-        <p><span>最后更新:</span>2016年07月28日 - 22时32分</p>
+        <p><span>最后更新:</span>2016年07月29日 - 18时02分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/28/hexo record/" title="使用Hexo + github page 搭建个人博客">http://tsumy.site/2016/07/28/hexo record/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/2016/07/28/hexo record/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/hexo record/" title="使用Hexo + github page 搭建个人博客">http://tsumy.site/hexo record/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/hexo record/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -308,7 +312,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2016/07/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Hello World</div>
       <strong class="article-nav-caption">></strong>
     </a>
@@ -320,7 +324,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">2.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.2.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改Hexo配置文件"><span class="toc-number">2.3.</span> <span class="toc-text">修改Hexo配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改Hexo的主题"><span class="toc-number">2.4.</span> <span class="toc-text">更改Hexo的主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写文章"><span class="toc-number">2.5.</span> <span class="toc-text">写文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#github-page"><span class="toc-number">2.5.1.</span> <span class="toc-text">github page</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多部署"><span class="toc-number">2.5.2.</span> <span class="toc-text">多部署</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">2.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.2.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改Hexo配置文件"><span class="toc-number">2.3.</span> <span class="toc-text">修改Hexo配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改Hexo的主题"><span class="toc-number">2.4.</span> <span class="toc-text">更改Hexo的主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写文章"><span class="toc-number">2.5.</span> <span class="toc-text">写文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-page"><span class="toc-number">2.6.</span> <span class="toc-text">github page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名"><span class="toc-number">2.7.</span> <span class="toc-text">域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多部署"><span class="toc-number">2.8.</span> <span class="toc-text">多部署</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -368,7 +372,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/28/hexo record/" data-title="使用Hexo + github page 搭建个人博客" data-url="http://tsumy.site/2016/07/28/hexo record/"></div>
+    <div class="ds-thread" data-thread-key="hexo record/" data-title="使用Hexo + github page 搭建个人博客" data-url="http://tsumy.site/hexo record/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -395,12 +399,12 @@
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/07/27/hello-world/" title="下一篇: Hello World">
+            <a href="/hello-world/" title="下一篇: Hello World">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/28/hexo record/">使用Hexo + github page 搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/hexo record/">使用Hexo + github page 搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
