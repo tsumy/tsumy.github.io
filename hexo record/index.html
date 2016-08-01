@@ -13,7 +13,7 @@
 <meta property="og:description" content="前言去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，">
 <meta property="og:image" content="http://ob05dsir4.bkt.clouddn.com/Hexotest.PNG">
 <meta property="og:image" content="http://ob05dsir4.bkt.clouddn.com/sshkey.PNG">
-<meta property="og:updated_time" content="2016-07-29T10:02:07.514Z">
+<meta property="og:updated_time" content="2016-07-30T02:47:20.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo + github page 搭建个人博客">
 <meta name="twitter:description" content="前言去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，">
@@ -67,10 +67,6 @@
         </hgroup>
 
         
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
-            </form>
         
         
             <div id="switch-btn" class="switch-btn">
@@ -152,7 +148,7 @@
                 
                 <section class="switch-part switch-part3">
                 
-                    <div id="js-aboutme">我就是我。</div>
+                    <div id="js-aboutme">时间会证明一切。</div>
                 </section>
                 
             </div>
@@ -249,23 +245,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。<br>过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，<br>真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，<br><!--以上是摘要--><br><a id="more"></a><br><!--以下是余下全文--><br>要么是markdown的功能不好用，对图片和公示支持的不好，反正就是各种限制吧，所以又萌生了<br>自己搭一个博客的想法。有想法就要马上行动，对比了Jekyll和Octopress等静态博客生成器最终选择了Hexo（<a href="https://www.zhihu.com/question/21981094" target="_blank" rel="external">参见知乎回答</a>）。<br>Hexo是一个<em>快速、简洁且高效的博客框架</em>，作者是一个台湾人（<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/" target="_blank" rel="external">Hexo 诞生记</a>），最大的特点就是简洁、快速，<br>而这也正是我所需要的（Hexo有<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">中文文档</a>也是一个优点吧）。<br>想要用Hexo搭建博客的过程最好还是去看官方文档，这里只是对我自己搭建博客的过程做一个记录。</p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装Hexo之前，需要安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>，<a href="https://git-scm.com/" target="_blank" rel="external">Git</a>。<br>Node.js不用说，Hexo就是用Node.js写的。而Git对程序员来说，也应该是基本技能了吧，不然怎么在Github上学习别人的代码，结交<del>同性</del>同行好友呢？<br>官方文档说安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>，我因为之前没弄过这玩意，所以直接下载的Node.js的安装程序。这两个东西只需要下载并安装，然后一路选择‘下一步’就好。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>去年就花了点时间用github page弄了个博客，用的是pelican，一个用python写的博客生成器。过程中是各种踩坑，各种填坑，总算把博客搭起来了，结果好像总共就上传了两篇笔记就再也没有更新了，真是惭愧啊（自己强行找的借口就是pelican不好用）。最近在学一些东西，需要做一些笔记和总结，发到csdn和博客园，发现要么是各种审核，<br><!--以上是摘要--><br><a id="more"></a><br><!--以下是余下全文--><br>要么是markdown的功能不好用，对图片和公示支持的不好，反正就是各种限制吧，所以又萌生了自己搭一个博客的想法。有想法就要马上行动，对比了Jekyll和Octopress等静态博客生成器最终选择了Hexo（<a href="https://www.zhihu.com/question/21981094" target="_blank" rel="external">参见知乎回答</a>）。Hexo是一个<em>快速、简洁且高效的博客框架</em>，作者是一个台湾人（<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/" target="_blank" rel="external">Hexo 诞生记</a>），最大的特点就是简洁、快速，而这也正是我所需要的（Hexo有<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">中文文档</a>也是一个优点吧）。想要用Hexo搭建博客的过程最好还是去看官方文档，这里只是对我自己搭建博客的过程做一个记录。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装Hexo之前，需要安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>，<a href="https://git-scm.com/" target="_blank" rel="external">Git</a>。Node.js不用说，Hexo就是用Node.js写的。而Git对程序员来说，也应该是基本技能了吧，不然怎么在Github上学习别人的代码，结交<del>同性</del>同行好友呢？官方文档说安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>，我因为之前没弄过这玩意，所以直接下载的Node.js的安装程序。这两个东西只需要下载并安装，然后一路选择‘下一步’就好。</p>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>使用 npm 安装 Hexo，在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>此处碰到第一个坑，用npm 安装很长时间没反应，结果把Node.js卸载了重新安装就能用npm。<br>安装完Hexo后，要输入下面命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>此处碰到第一个坑，用npm 安装很长时间没反应，结果把Node.js卸载了重新安装就能用npm。安装完Hexo后，要输入下面命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
 <p>上面第三个命令有提示npm err，然后用下面命令切换到taobao的服务器上，最后终于成功安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
 <p>先在本地测试一下，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
 <p>在浏览器中输入<a href="http://localhost:4000/，如果看到下图，就说明Hexo安装成功了。" target="_blank" rel="external">http://localhost:4000/，如果看到下图，就说明Hexo安装成功了。</a></p>
 <p><img src="http://ob05dsir4.bkt.clouddn.com/Hexotest.PNG" alt=""></p>
 <h2 id="修改Hexo配置文件"><a href="#修改Hexo配置文件" class="headerlink" title="修改Hexo配置文件"></a>修改Hexo配置文件</h2><p>打开文件夹中的_config.yml文件进行配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># Site 网站</div><div class="line">title:        标题</div><div class="line">subtitle:     副标题</div><div class="line">description:  描述</div><div class="line">author:       作者</div><div class="line"></div><div class="line"># URL</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url:          网址</div><div class="line">root: /       根目录</div></pre></td></tr></table></figure></p>
 <p>就更改上面这些配置就行了，其他配置暂时不用更改。</p>
-<h2 id="更改Hexo的主题"><a href="#更改Hexo的主题" class="headerlink" title="更改Hexo的主题"></a>更改Hexo的主题</h2><p>Hexo可供选择的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>有很多了，我选择的是<a href="https://github.com/luuman/hexo-theme-spfk" target="_blank" rel="external">spfk</a>，<br>比较喜欢这个主题的风格，在这里先感谢这个主题的作者。<br>先将spfk主题克隆到本地，在Hexo目录下运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/luuman/hexo-theme-spfk themes/spfk</div></pre></td></tr></table></figure></p>
-<p>把Hexo目录的_config.yml中theme: landscape 项改为 theme: spfk<br>然后进入 themes/spfk 文件夹中，更改主题的配置文件，主要改了menu的几个选项，duoshuo的domain内容。</p>
+<h2 id="更改Hexo的主题"><a href="#更改Hexo的主题" class="headerlink" title="更改Hexo的主题"></a>更改Hexo的主题</h2><p>Hexo可供选择的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>有很多了，我选择的是<a href="https://github.com/luuman/hexo-theme-spfk" target="_blank" rel="external">spfk</a>，比较喜欢这个主题的风格，在这里先感谢这个主题的作者。先将spfk主题克隆到本地，在Hexo目录下运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/luuman/hexo-theme-spfk themes/spfk</div></pre></td></tr></table></figure></p>
+<p>把Hexo目录的_config.yml中theme: landscape 项改为 theme: spfk，然后进入 themes/spfk 文件夹中，更改主题的配置文件，主要改了menu的几个选项，duoshuo的domain内容。</p>
 <h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>写文章之前先去scaffolds文件夹中更改一下post模板文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">description: #文章描述</div><div class="line">categories: #文章分类</div><div class="line">- 这是分类</div><div class="line">tags: #文章标签</div><div class="line">- 标签1</div><div class="line">- 标签2</div><div class="line">toc: true #生成目录</div><div class="line">author:</div><div class="line">comments:</div><div class="line">original:</div><div class="line">permalink: #指定链接</div><div class="line">---</div><div class="line"></div><div class="line"></div><div class="line">&lt;!--以上是摘要--&gt;</div><div class="line">&lt;!--more--&gt;</div><div class="line">&lt;!--以下是余下全文--&gt;</div></pre></td></tr></table></figure></p>
 <p>然后输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo n post newpost</div></pre></td></tr></table></figure></p>
 <p>hexo会在source目录下，自动生成一个newpost.md文件，并且文章的属性也已经安装模板样式自动填写了。然后只需要在newpost.md写入正文和更改一些属性就行了。<br>以上内容只需要在本地使用 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 地址就能查看博客的效果，下面介绍怎样部署到github，利用github page来访问博客。</p>
-<h2 id="github-page"><a href="#github-page" class="headerlink" title="github page"></a>github page</h2><p>首先要申请一个github账号，然后在自己的github中新建一个项目（Create a new repository）,<strong>注意</strong>：项目名称只能填写github的账户名.github.io。为了避免每次提交代码的时候都要输入github的用户名和密码，需要为github添加SHH key。<br>运行 git Bash，输入下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">ls</div></pre></td></tr></table></figure></p>
-<p>如果已经存在id_rsa.pub 或 id_dsa.pub，那么可以跳过创建SSH key，直接把SSH key添加到github中。<br>如果不存在，那么需要创建一个SSH key。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;你的注释名字，可以是邮箱地址或者电脑名等&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="github-page"><a href="#github-page" class="headerlink" title="github page"></a>github page</h2><p>首先要申请一个github账号，然后在自己的github中新建一个项目（Create a new repository）,<strong>注意</strong>：项目名称只能填写github的账户名.github.io。为了避免每次提交代码的时候都要输入github的用户名和密码，需要为github添加SHH key。运行 git Bash，输入下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">ls</div></pre></td></tr></table></figure></p>
+<p>如果已经存在id_rsa.pub 或 id_dsa.pub，那么可以跳过创建SSH key，直接把SSH key添加到github中。如果不存在，那么需要创建一个SSH key。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;你的注释名字，可以是邮箱地址或者电脑名等&quot;</div></pre></td></tr></table></figure></p>
 <p>接下来几步，一直按回车就行了，如果出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># The key fingerprint is:</div><div class="line"># 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</div></pre></td></tr></table></figure></p>
 <p>就说明已经创建成功了。用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clip &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
 <p>把SHH key复制到剪贴板中，接下来打开github个人账户的设置选项，把SHH key添加到github账户中。<img src="http://ob05dsir4.bkt.clouddn.com/sshkey.PNG" alt=""><br>修改Hexo的_config.yml文件，填写部署的方式和地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo:</div><div class="line">  github:git@github.com:yourname.github.io.git,master</div></pre></td></tr></table></figure></p>
@@ -287,7 +283,7 @@
         <p><span>本文标题:</span><a href="/hexo record/">使用Hexo + github page 搭建个人博客</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tsumy 的个人博客">tsumy</a></p>
         <p><span>发布时间:</span>2016年07月28日 - 14时38分</p>
-        <p><span>最后更新:</span>2016年07月29日 - 18时02分</p>
+        <p><span>最后更新:</span>2016年07月30日 - 10时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/hexo record/" title="使用Hexo + github page 搭建个人博客">http://tsumy.site/hexo record/</a>
             <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/hexo record/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -302,6 +298,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/LeetCode-1-Two-Sum/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          [LeetCode]1. Two Sum
+        
+      </div>
+    </a>
   
   
     <a href="/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -387,7 +392,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/LeetCode-1-Two-Sum/" title="上一篇: [LeetCode]1. Two Sum">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -396,7 +403,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/hexo record/">使用Hexo + github page 搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/text/">text</a></li><li class="post-list-item"><a class="post-list-link" href="/LeetCode-1-Two-Sum/">[LeetCode]1. Two Sum</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo record/">使用Hexo + github page 搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -550,23 +557,6 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 
-
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
 
   </div>
 </body>

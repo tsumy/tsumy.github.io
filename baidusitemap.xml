@@ -4,8 +4,41 @@
 
     
   <url>
+    <loc>http://tsumy.site/text/</loc>
+    <lastmod>2016-08-01T04:29:13.980Z</lastmod>
+    <data>
+        <display>
+        <title>text</title>
+        <pubTime>2016-08-01T04:29:13.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-1-Two-Sum/</loc>
+    <lastmod>2016-08-01T04:20:31.721Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode]1. Two Sum</title>
+        <pubTime>2016-08-01T04:17:30.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tsumy.site/hexo%20record/</loc>
-    <lastmod>2016-07-29T10:02:07.514Z</lastmod>
+    <lastmod>2016-07-30T02:47:20.142Z</lastmod>
     <data>
         <display>
         <title>使用Hexo + github page 搭建个人博客</title>

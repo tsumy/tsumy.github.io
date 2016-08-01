@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>about | tsumy&#39;blog</title>
+  <title>[LeetCode]1. Two Sum | tsumy&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是about页面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://tsumy.site/about/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="[LeetCode]1. Two Sum">
+<meta property="og:url" content="http://tsumy.site/LeetCode-1-Two-Sum/index.html">
 <meta property="og:site_name" content="tsumy'blog">
-<meta property="og:description" content="这是about页面">
-<meta property="og:updated_time" content="2016-07-27T08:35:56.400Z">
+<meta property="og:updated_time" content="2016-08-01T04:20:31.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="这是about页面">
+<meta name="twitter:title" content="[LeetCode]1. Two Sum">
   
     <link rel="alternative" href="/atom.xml" title="tsumy&#39;blog" type="application/atom+xml">
   
@@ -39,7 +36,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -200,11 +197,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-1-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-      <time datetime="2016-07-27T07:48:40.000Z" itemprop="datePublished">2016-07-27</time>
+      <a href="/LeetCode-1-Two-Sum/" class="article-date">
+      <time datetime="2016-08-01T04:17:30.000Z" itemprop="datePublished">2016-08-01</time>
 </a>
     </div>
   
@@ -217,7 +214,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      [LeetCode]1. Two Sum
     </h1>
   
 
@@ -225,6 +222,10 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    </div>
+
 
         
         <div class="clearfix"></div>
@@ -234,42 +235,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h1 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h1><p>Given an array of integers, return <b>indices</b> of the two numbers such that they add up to a specific target.</p>
+
+<p>You may assume that each input would have <b><i>exactly</i></b> one solution.</p>
+
+<p><br><b>Example:</b><br><br></p><pre>Given nums = [2, 7, 11, 15], target = 9,<br><br>Because nums[<b>0</b>] + nums[<b>1</b>] = 2 + 7 = 9,<br>return [<b>0</b>, <b>1</b>].<br></pre><br><p></p>
+
+<p><br><b><font color="red">UPDATE (2016/2/13):</font></b><br><br>The return format had been changed to <b>zero-based</b> indices. Please read the above updated description carefully.<br></p><p></p>
 
 
-          
-        <p>这是about页面</p>
+<h1 id="Code-1-（exhaustive-search）"><a href="#Code-1-（exhaustive-search）" class="headerlink" title="Code 1 （exhaustive search）:"></a>Code 1 （exhaustive search）:</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type target: int</div><div class="line">        :rtype: List[int]</div><div class="line">        """</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,len(nums)):</div><div class="line">                <span class="keyword">if</span> nums[i]+nums[j]==target:</div><div class="line">                    <span class="keyword">return</span>[i,j]</div></pre></td></tr></table></figure>
+<h2 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h2><p>Status: Accepted<br>Runtime: 5872 ms<br>Ranking: beats 9.41% </p>
+<h1 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2:"></a>Code 2:</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type target: int</div><div class="line">        :rtype: List[int]</div><div class="line">        """</div><div class="line">        tmp=[]</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">            tmp.append((i,nums[i]))</div><div class="line">        tmp=sorted(tmp,key=<span class="keyword">lambda</span> t:t[<span class="number">1</span>]) <span class="comment">###  use tuple to sort nums and get the index</span></div><div class="line">        nums.sort()</div><div class="line">        i=<span class="number">0</span></div><div class="line">        j=len(nums)<span class="number">-1</span>        </div><div class="line">        <span class="keyword">while</span> i&lt;=j:</div><div class="line">            <span class="keyword">if</span> nums[i]+nums[j]&lt;target:</div><div class="line">                i+=<span class="number">1</span></div><div class="line">            <span class="keyword">elif</span> nums[i]+nums[j]&gt;target:</div><div class="line">                j-=<span class="number">1</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> [tmp[i][<span class="number">0</span>],tmp[j][<span class="number">0</span>]]</div></pre></td></tr></table></figure>
+<h2 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h2><p>Status: Accepted<br>Runtime: 52 ms<br>Ranking: beats 73.69% </p>
 
       
     </div>
@@ -277,10 +259,76 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/LeetCode-1-Two-Sum/">[LeetCode]1. Two Sum</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tsumy 的个人博客">tsumy</a></p>
+        <p><span>发布时间:</span>2016年08月01日 - 12时17分</p>
+        <p><span>最后更新:</span>2016年08月01日 - 12时20分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/LeetCode-1-Two-Sum/" title="[LeetCode]1. Two Sum">http://tsumy.site/LeetCode-1-Two-Sum/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/LeetCode-1-Two-Sum/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+    <a href="/text/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          text
+        
+      </div>
+    </a>
+  
+  
+    <a href="/hexo record/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Hexo + github page 搭建个人博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Discription"><span class="toc-number">1.</span> <span class="toc-text">Discription:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Code-1-（exhaustive-search）"><span class="toc-number">2.</span> <span class="toc-text">Code 1 （exhaustive search）:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission-Result"><span class="toc-number">2.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Code-2"><span class="toc-number">3.</span> <span class="toc-text">Code 2:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission-Result-1"><span class="toc-number">3.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
 
 
 
@@ -301,7 +349,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="about" data-url="http://tsumy.site/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="LeetCode-1-Two-Sum/" data-title="[LeetCode]1. Two Sum" data-url="http://tsumy.site/LeetCode-1-Two-Sum/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -321,6 +369,39 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/text/" title="上一篇: text">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/hexo record/" title="下一篇: 使用Hexo + github page 搭建个人博客">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/text/">text</a></li><li class="post-list-item"><a class="post-list-link" href="/LeetCode-1-Two-Sum/">[LeetCode]1. Two Sum</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo record/">使用Hexo + github page 搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 
