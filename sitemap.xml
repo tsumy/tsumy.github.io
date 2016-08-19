@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tsumy.site/hexo%20record/</loc>
+    
+    <lastmod>2016-08-19T04:01:50.589Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tsumy.site/LeetCode-36.%20Valid%20Sudoku/</loc>
     
     <lastmod>2016-08-19T03:22:35.749Z</lastmod>
@@ -96,13 +103,6 @@
     <loc>http://tsumy.site/LeetCode-1.Two-Sum/</loc>
     
     <lastmod>2016-08-19T02:46:56.197Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tsumy.site/hexo%20record/</loc>
-    
-    <lastmod>2016-07-30T02:47:20.142Z</lastmod>
     
   </url>
   

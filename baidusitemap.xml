@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://tsumy.site/hexo%20record/</loc>
+    <lastmod>2016-08-19T04:01:50.589Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo + github page 搭建个人博客</title>
+        <pubTime>2016-07-28T06:38:46.000Z</pubTime>
+        
+        <tag>github page</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo记录" url="http://tsumy.site/categories/Hexo%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tsumy.site/LeetCode-36.%20Valid%20Sudoku/</loc>
     <lastmod>2016-08-19T03:22:35.749Z</lastmod>
     <data>
@@ -249,30 +273,6 @@
            
              
               <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tsumy.site/hexo%20record/</loc>
-    <lastmod>2016-07-30T02:47:20.142Z</lastmod>
-    <data>
-        <display>
-        <title>使用Hexo + github page 搭建个人博客</title>
-        <pubTime>2016-07-28T06:38:46.000Z</pubTime>
-        
-        <tag>github page</tag>
-         
-        <tag>Hexo</tag>
-         
-        <tag>coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo记录" url="http://tsumy.site/categories/Hexo%E8%AE%B0%E5%BD%95/"/>
           
         </display>
     </data>
