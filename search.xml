@@ -4,8 +4,579 @@
   
     
     <entry>
-      <title><![CDATA[[LeetCode]1. Two Sum]]></title>
-      <url>http://tsumy.site/LeetCode-1-Two-Sum/</url>
+      <title><![CDATA[[LeetCode] 6. ZigZag Conversion]]></title>
+      <url>http://tsumy.site/LeetCode-6.ZigZag%20Conversion/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/zigzag-conversion/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>The string <code>“PAYPALISHIRING”</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)<br></p><pre>P   A   H   N<br>A P L S I I G<br>Y   I   R<br></pre><p></p>
+<p>And then read line by line: <code>“PAHNAPLSIIGYIR”</code></p><p></p><p></p>
+<p><br>Write the code that will take a string and make this conversion given a number of rows:<br><br></p><pre>string convert(string text, int nRows);</pre><br><br><code>convert(“PAYPALISHIRING”, 3)</code> should return <code>“PAHNAPLSIIGYIR”</code>.<br><p></p><p></p>            
+
+
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><p>If nRows=4, text=abcdefghijklmnop</p>
+<pre> 
+row 1:a   g   m
+row 2:b f h l n
+row 3:c e i k o
+row 4:d   j   p      return row 1 + row 2 + row 3 +row 4 ,i.e. return agm bfhln ceiko djp
+
+so,assigned order is：row 1, row 2, row 3, row 4, row 3, row 2, row 1,row 2, row 3 etc.
+the ith char in text will assigned to the row which NO. is the value of the ith index of the above list. 
+</pre>
+
+<h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def convert(self, s, numRows):
+        &quot;&quot;&quot;
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        &quot;&quot;&quot;
+        if numRows==1:
+            return s
+
+        li=[&apos;&apos;]*numRows
+        po=-1
+        dir=1
+        for i in s:
+            if dir:
+                po+=1
+                li[po]=li[po]+i
+                if po==numRows-1:
+                    dir=0
+            else:
+                po-=1
+                li[po]=li[po]+i
+                if po==0:
+                    dir=1
+        return &apos;&apos;.join(li)           
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 112 ms<br>Ranking: beats <font color="#0099ff" size="5" face="黑体">92.15%</font></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 36. Valid Sudoku ]]></title>
+      <url>http://tsumy.site/LeetCode-36.%20Valid%20Sudoku/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/valid-sudoku/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">Sudoku Puzzles - The Rules</a>.</p>
+
+<p>The Sudoku board could be partially filled, where empty cells are filled with the character <code>‘.’</code>.</p>
+
+<p><br><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png"><br><br></p><p style="font-size: 11px">            A partially filled sudoku which is valid.</p><br><p></p>
+
+<p></p><p><b>Note:</b><br><br>A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.<br></p><p></p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def isValidSudoku(self, board):
+        &quot;&quot;&quot;
+        :type board: List[List[str]]
+        :rtype: bool
+        &quot;&quot;&quot;
+        return 1 == max(collections.Counter(
+            x
+            for i, row in enumerate(board)  
+            for j, c in enumerate(row)
+            if c != &apos;.&apos;
+            for x in ((c, i), (j, c), (i/3, j/3, c))
+        ).values() + [1])
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 133 ms<br>Ranking: beats 12.95% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 28. Implement strStr() ]]></title>
+      <url>http://tsumy.site/LeetCode-28.%20Implement%20strStr()/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Implement strStr().</p>
+<p>Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def strStr(self, haystack, needle):
+        &quot;&quot;&quot;
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        &quot;&quot;&quot;
+        if not haystack and needle or len(haystack)&lt;len(needle):
+            return -1
+        if not haystack :
+            return 0
+        if haystack and not needle:
+            return 0
+        for i,v in enumerate(haystack):
+            if haystack[i:len(needle)+i]==needle:
+                return i
+            if i==len(haystack)-1:
+                return -1
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 848 ms<br>Ranking: beats 0.30% </p>
+<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2:"></a>Code 2:</h2><pre><code>class Solution(object):
+    def strStr(self, haystack, needle):
+        &quot;&quot;&quot;
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        &quot;&quot;&quot;
+
+        if not needle:
+            return 0
+        if not haystack:
+            return -1
+        if len(haystack)&lt;len(needle):
+            return -1
+        i=0
+        while 1:
+            if i+len(needle)&gt;len(haystack):
+                return -1
+            if haystack[i:i+len(needle)]==needle:
+                return i
+            i+=1                
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 64 ms<br>Ranking: beats 43.29% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 27. Remove Element ]]></title>
+      <url>http://tsumy.site/LeetCode-27.%20Remove%20Element/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given an array and a value, remove all instances of that value in place and return the new length.</font></p>
+<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
+<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<p>Example:<br>Given input array nums = [3,2,2,3], val = 3</p>
+<p>Your function should return length = 2, with the first two elements of nums being 2.               </p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code>class Solution(object):
+    def removeElement(self, nums, val):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        &quot;&quot;&quot;
+        i=0
+        while i&lt;len(nums):
+            if nums[i]==val:
+                nums.pop(i)
+                i-=1
+            i+=1
+        return len(nums)        
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 72 ms<br>Ranking: beats 5.50%</p>
+<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2 :"></a>Code 2 :</h2><pre><code>class Solution(object):
+    def removeElement(self, nums, val):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        &quot;&quot;&quot;
+        p1,p2=0,len(nums)-1
+        if p2&lt;1 and val in nums:
+            return 0
+        while p1&lt;=p2:
+            if nums[p2]==val:
+                p2-=1
+                continue
+            elif nums[p1]!=val:
+                p1+=1
+                continue
+            else:
+                nums[p1],nums[p2]=nums[p2],nums[p1]
+        return p2+1        
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 64 ms<br>Ranking: beats 18.83%</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 26. Remove Duplicates from Sorted Array ]]></title>
+      <url>http://tsumy.site/LeetCode-26.%20Remove%20Duplicates%20from%20Sorted%20Array/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</font></p>
+<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
+<p>For example,<br>Given input array nums = [1,1,2],</p>
+<p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.               </p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code>class Solution(object):
+    def removeDuplicates(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        if not nums:
+            return 0
+        p=0
+        for i in nums:
+            if nums[p]!=i:
+                p+=1
+                nums[p]=i
+        return p+1
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 96 ms<br>Ranking: beats 80.80%</p>
+<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2 :"></a>Code 2 :</h2><pre><code>class Solution(object):
+    def removeDuplicates(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        le=len(nums)
+        if le&lt;2:
+            return le
+        i=1
+        while i&lt;len(nums):
+            if nums[i]==nums[i-1]:
+                nums.pop(i)
+            else:
+                i+=1
+        return len(nums)
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 144 ms<br>Ranking: beats 17.31%</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 24. Swap Nodes in Pairs ]]></title>
+      <url>http://tsumy.site/LeetCode-24.%20Swap%20Nodes%20in%20Pairs/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given a linked list, swap every two adjacent nodes and return its head.</font></p>
+<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
+<p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.               </p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def swapPairs(self, head):
+        &quot;&quot;&quot;
+        :type head: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+
+        link=ListNode(0)
+        link.next=head
+        tail=link
+        while tail.next and tail.next.next:
+            a=tail.next
+            b=a.next
+            tail.next,a.next,b.next=b,b.next,a
+            tail=a
+
+        return link.next  
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 44 ms<br>Ranking: beats 81.51%</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 21. Merge Two Sorted Lists ]]></title>
+      <url>http://tsumy.site/LeetCode-21.%20Merge%20Two%20Sorted%20Lists/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><font size="3">Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</font><br>## Analyze:<br><br><br>## Code 1 :<br><br><br>    # Definition for singly-linked list.<br>    # class ListNode(object):<br>    #     def <strong>init</strong>(self, x):<br>    #         self.val = x<br>    #         self.next = None<br><br>    class Solution(object):<br>        def mergeTwoLists(self, l1, l2):<br>            “””<br>            :type l1: ListNode<br>            :type l2: ListNode<br>            :rtype: ListNode<br>            “””<br>            head=ListNode(0)<br>            tail=head<br>            while l1 and l2:<br>                if l1.val &gt; l2.val:<br>                    tail.next=l2<br>                    l2=l2.next<br>                else:<br>                    tail.next=l1<br>                    l1=l1.next<br>                tail=tail.next<br>            if l1 is None:<br>                tail.next=l2<br>            else:<br>                tail.next=l1<br>            return head.next<br><br>### Submission Result:<br>Status: Accepted<br>Runtime: 52 ms<br>Ranking: beats <font size="3" color="red">97.5%</font> 
+
+
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 20. Valid Parentheses ]]></title>
+      <url>http://tsumy.site/LeetCode-20.%20Valid%20Parentheses/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Given a string containing just the characters <code>‘(‘</code>, <code>‘)’</code>, <code>‘{‘</code>, <code>‘}’</code>, <code>‘[‘</code> and <code>‘]’</code>, determine if the input string is valid.</p>
+
+<p>The brackets must close in the correct order, <code>“()”</code> and <code>“()[]{}”</code> are all valid but <code>“(]”</code> and <code>“([)]”</code> are not.</p><p></p>
+
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code>class Solution(object):
+    def isValid(self, s):
+        &quot;&quot;&quot;
+        :type s: str
+        :rtype: bool
+        &quot;&quot;&quot;
+        li=[]
+        left=[&apos;(&apos;,&apos;{&apos;,&apos;[&apos;]
+        for i in s:
+            if i in left:
+                li.append(i)
+            elif not li:
+                return False
+            elif i ==&apos;)&apos; :
+                if li[-1]!=&apos;(&apos;:
+                    return False
+                else:
+                    li.pop()
+            elif i ==&apos;}&apos; :
+                if li[-1]!=&apos;{&apos;:
+                    return False
+                else:
+                    li.pop()
+            elif  i ==&apos;]&apos; :
+                if li[-1]!=&apos;[&apos;:
+                    return False
+                else:
+                    li.pop()
+        if li:
+            return False
+        else:
+            return True         
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 44 ms<br>Ranking: beats 72.46% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 19. Remove Nth Node From End of List ]]></title>
+      <url>http://tsumy.site/LeetCode-19.%20Remove%20Nth%20Node%20From%20End%20of%20List/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Given a linked list, remove the nth node from the end of list and return its head.</p>
+<p>For example,</p>
+<p>   Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</p>
+<p>   After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.<br>Note:<br>Given n will always be valid.<br>Try to do this in one pass.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        &quot;&quot;&quot;
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        &quot;&quot;&quot;
+        front,rear=head,head
+        while n&gt;0:
+            n-=1
+            rear=rear.next
+        if not rear :
+            return head.next
+        while rear.next:             ##
+            rear=rear.next
+            front=front.next
+        front.next=front.next.next   #modify the next attribute of node
+        return head    
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 56 ms<br>Ranking: beats 58.16% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 14. Longest Common Prefix ]]></title>
+      <url>http://tsumy.site/LeetCode-14.%20Longest%20Common%20Prefix/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def longestCommonPrefix(self, strs):
+        &quot;&quot;&quot;
+        :type strs: List[str]
+        :rtype: str
+        &quot;&quot;&quot;
+        if not strs:
+            return &quot;&quot;
+        if not strs[0]:
+            return &quot;&quot;
+        l=0
+        tmp=strs[0][l]
+        while 1:
+            for i in strs:
+                if l&gt;=len(i):
+                    return strs[0][0:l]
+                if i[l] !=tmp:
+                    return strs[0][0:l]
+            l+=1
+            if l&gt;=len(strs[0]):
+                    return strs[0][0:l]
+            tmp=strs[0][l]
+        return strs[0][0:l+1]
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 52 ms<br>Ranking: beats 73.43% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 13. Roman to Integer ]]></title>
+      <url>http://tsumy.site/LeetCode-13.%20Roman%20to%20Integer/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/roman-to-integer/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Given a roman numeral, convert it to an integer.</p>
+<p>Input is guaranteed to be within the range from 1 to 3999.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def romanToInt(self, s):
+        &quot;&quot;&quot;
+        :type s: str
+        :rtype: int
+        &quot;&quot;&quot;
+        dic={&apos;I&apos;:1,&apos;II&apos;:2,&apos;III&apos;:3,&apos;V&apos;:5,&apos;X&apos;:10,&apos;L&apos;:50,&apos;C&apos;:100,&apos;D&apos;:500,&apos;M&apos;:1000,&apos;v&apos;:5*1000,&apos;x&apos;:10*1000,&apos;l&apos;:50*1000,&apos;c&apos;:100*1000,&apos;d&apos;:500*1000,&apos;m&apos;:1000*1000}
+        li=s
+        ln=[]
+        for i in li:
+            if ln and dic[i]&gt;ln[-1]:
+                ln[-1]=-1*ln[-1]
+            ln.append(dic[i])
+        return sum(ln)
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 176 ms<br>Ranking: beats 68.85% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 9. Palindrome Number ]]></title>
+      <url>http://tsumy.site/LeetCode-9.%20Palindrome%20Number/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/palindrome-number/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Determine whether an integer is a palindrome. Do this without extra space.</p>
+<p>click to show spoilers.</p>
+<p>Some hints:<br>Could negative integers be palindromes? (ie, -1)</p>
+<p>If you are thinking of converting the integer to string, note the restriction of using extra space.</p>
+<p>You could also try reversing an integer. However, if you have solved the problem “Reverse Integer”, you know that the reversed integer might overflow. How would you handle such case?</p>
+<p>There is a more generic way of solving this problem.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def isPalindrome(self, x):
+        &quot;&quot;&quot;
+        :type x: int
+        :rtype: bool
+        &quot;&quot;&quot;
+        if x&lt;0:
+            return False
+        for i in range(len(str(x))):
+            if str(x)[i]==str(x)[len(str(x))-i-1]:
+                continue
+            else:
+                return False
+        return True
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 392 ms<br>Ranking: beats 4.18% </p>
+<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2:"></a>Code 2:</h2><pre><code>class Solution(object):
+    def isPalindrome(self, x):
+        &quot;&quot;&quot;
+        :type x: int
+        :rtype: bool
+        &quot;&quot;&quot;
+        if x&lt;0:
+            return False        
+        st=str(x)
+        le=len(st)
+        for i in range(le):
+            if st[i]==st[le-i-1]:
+                continue
+            else:
+                return False
+        return True
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 292 ms<br>Ranking: beats 50.4% </p>
+<h2 id="Code-3"><a href="#Code-3" class="headerlink" title="Code 3:"></a>Code 3:</h2><pre><code>class Solution(object):
+    def isPalindrome(self, x):
+        &quot;&quot;&quot;
+        :type x: int
+        :rtype: bool
+        &quot;&quot;&quot;
+        if x&lt;0:
+            return False
+
+        st=str(x)
+        le=len(st)
+        for i in range(le/2+1):
+            if st[i]==st[le-i-1]:
+                continue
+            else:
+                return False
+        return True
+</code></pre><h3 id="Submission-Result-2"><a href="#Submission-Result-2" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 264 ms<br>Ranking: beats 80.18% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 7. Reverse Integer ]]></title>
+      <url>http://tsumy.site/LeetCode-7.%20Reverse%20Integer/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p></p><p>Reverse digits of an integer.</p><p></p>
+<p></p><p style="font-family:monospace"><br><b>Example1:</b> x =  123, return  321<br><br><b>Example2:</b> x = -123, return -321<br></p><p></p>
+<p></p><p></p><p></p>
+<div class="spoilers" style="display: block;"><b>Have you thought about this?</b><br><p>Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!</p><br><p>If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.</p><br><p>Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?</p><br><p>For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p><br><p><b><font color="red">Update (2014-11-10):</font></b><br><br>Test cases had been added to test the overflow behavior.<br></p><br></div>
+
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><pre><code>print &apos;　&apos;,bin(2147483647)
+print &apos;　&apos;,bin(2147483646)
+print &apos;　&apos;,bin(2147483648),&apos;overflows&apos; 
+print &apos; &apos;,bin(-2147483647)
+print &apos; &apos;,bin(-2147483648),&apos;overflows&apos; 
+print &apos; &apos;,bin(-2147483649),&apos;overflows&apos; 
+print &apos; &apos;,bin(-2147483647)
+
+　 0b1111111111111111111111111111111
+　 0b1111111111111111111111111111110
+　 0b10000000000000000000000000000000 overflows
+  -0b1111111111111111111111111111111
+  -0b10000000000000000000000000000000 overflows
+  -0b10000000000000000000000000000001 overflows
+  -0b1111111111111111111111111111111
+</code></pre><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code>class Solution(object):
+    def reverse(self, x):
+        &quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;
+        if x==0:
+            return x
+        flag=1
+        if x&lt;0:
+            flag=-1
+            x=-x
+        re=0
+        i=1
+        while 1:
+            re=re+x%10
+            x=x/10
+            if x&lt;1:
+                re=re*flag
+                break
+            re=re*10
+            i+=1
+        if re &gt; 2147483647 or re &lt; -2147483648:
+            return 0
+        return re
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 64 ms<br>Ranking: beats 70.20% </p>
+<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2:"></a>Code 2:</h2><pre><code>class Solution(object):
+    def reverse(self, x):
+        &quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;
+        if x==0:
+            return x
+        flag=1
+        if x&lt;0:
+            flag=-1
+            x=-x
+        re=string.atoi(str(x)[::-1])
+        re=re*flag
+        if re &gt; 2147483647 or re &lt; -2147483648:
+            return 0
+        return re
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 64 ms<br>Ranking: beats 70.20% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 1. Two Sum]]></title>
+      <url>http://tsumy.site/LeetCode-1.Two-Sum/</url>
       <content type="html"><![CDATA[<!--以上是摘要-->
 <a id="more"></a>
 <!--以下是余下全文-->

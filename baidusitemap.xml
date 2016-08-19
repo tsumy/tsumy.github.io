@@ -4,11 +4,245 @@
 
     
   <url>
-    <loc>http://tsumy.site/LeetCode-1-Two-Sum/</loc>
-    <lastmod>2016-08-01T04:20:31.721Z</lastmod>
+    <loc>http://tsumy.site/LeetCode-36.%20Valid%20Sudoku/</loc>
+    <lastmod>2016-08-19T03:22:35.749Z</lastmod>
     <data>
         <display>
-        <title>[LeetCode]1. Two Sum</title>
+        <title>[LeetCode] 36. Valid Sudoku </title>
+        <pubTime>2016-08-19T03:22:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-28.%20Implement%20strStr()/</loc>
+    <lastmod>2016-08-19T03:19:07.682Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 28. Implement strStr() </title>
+        <pubTime>2016-08-19T03:18:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-27.%20Remove%20Element/</loc>
+    <lastmod>2016-08-19T03:17:08.261Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 27. Remove Element </title>
+        <pubTime>2016-08-19T03:17:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-6.ZigZag%20Conversion/</loc>
+    <lastmod>2016-08-19T03:12:53.031Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 6. ZigZag Conversion</title>
+        <pubTime>2016-08-19T03:40:40.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-26.%20Remove%20Duplicates%20from%20Sorted%20Array/</loc>
+    <lastmod>2016-08-19T03:11:23.329Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 26. Remove Duplicates from Sorted Array </title>
+        <pubTime>2016-08-19T03:08:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-24.%20Swap%20Nodes%20in%20Pairs/</loc>
+    <lastmod>2016-08-19T03:10:19.805Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 24. Swap Nodes in Pairs </title>
+        <pubTime>2016-08-19T03:08:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-21.%20Merge%20Two%20Sorted%20Lists/</loc>
+    <lastmod>2016-08-19T03:08:53.166Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 21. Merge Two Sorted Lists </title>
+        <pubTime>2016-08-19T03:08:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-20.%20Valid%20Parentheses/</loc>
+    <lastmod>2016-08-19T03:05:18.464Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 20. Valid Parentheses </title>
+        <pubTime>2016-08-19T03:04:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-19.%20Remove%20Nth%20Node%20From%20End%20of%20List/</loc>
+    <lastmod>2016-08-19T03:03:55.369Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 19. Remove Nth Node From End of List </title>
+        <pubTime>2016-08-19T03:03:56.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-14.%20Longest%20Common%20Prefix/</loc>
+    <lastmod>2016-08-19T03:00:32.199Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 14. Longest Common Prefix </title>
+        <pubTime>2016-08-19T03:01:56.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-13.%20Roman%20to%20Integer/</loc>
+    <lastmod>2016-08-19T02:58:48.664Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 13. Roman to Integer </title>
+        <pubTime>2016-08-19T02:59:23.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-9.%20Palindrome%20Number/</loc>
+    <lastmod>2016-08-19T02:57:33.914Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 9. Palindrome Number </title>
+        <pubTime>2016-08-19T02:57:14.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-7.%20Reverse%20Integer/</loc>
+    <lastmod>2016-08-19T02:55:46.564Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 7. Reverse Integer </title>
+        <pubTime>2016-08-19T02:55:04.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="http://tsumy.site/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tsumy.site/LeetCode-1.Two-Sum/</loc>
+    <lastmod>2016-08-19T02:46:56.197Z</lastmod>
+    <data>
+        <display>
+        <title>[LeetCode] 1. Two Sum</title>
         <pubTime>2016-08-01T04:17:30.000Z</pubTime>
         
          
