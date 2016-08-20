@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[LeetCode] 27. Remove Element  | tsumy&#39;blog</title>
+  <title>[LeetCode] 38. Count and Say  | tsumy&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 27. Remove Element ">
-<meta property="og:url" content="http://tsumy.site/LeetCode-27. Remove Element/index.html">
+<meta property="og:title" content="[LeetCode] 38. Count and Say ">
+<meta property="og:url" content="http://tsumy.site/LeetCode-38. Count and Say/index.html">
 <meta property="og:site_name" content="tsumy'blog">
-<meta property="og:updated_time" content="2016-08-19T03:17:08.261Z">
+<meta property="og:updated_time" content="2016-08-20T12:12:09.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 27. Remove Element ">
+<meta name="twitter:title" content="[LeetCode] 38. Count and Say ">
   
     <link rel="alternative" href="/atom.xml" title="tsumy&#39;blog" type="application/atom+xml">
   
@@ -197,11 +197,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-27. Remove Element" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-38. Count and Say" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/LeetCode-27. Remove Element/" class="article-date">
-      <time datetime="2016-08-19T03:17:52.000Z" itemprop="datePublished">2016-08-19</time>
+      <a href="/LeetCode-38. Count and Say/" class="article-date">
+      <time datetime="2016-08-20T12:11:52.000Z" itemprop="datePublished">2016-08-20</time>
 </a>
     </div>
   
@@ -214,7 +214,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [LeetCode] 27. Remove Element 
+      [LeetCode] 38. Count and Say 
     </h1>
   
 
@@ -238,48 +238,34 @@
         <!--以上是摘要-->
 <a id="more"></a>
 <!--以下是余下全文-->
-<p><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="external">Leetcode link for this question</a></p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given an array and a value, remove all instances of that value in place and return the new length.</font></p>
-<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
-<p>Example:<br>Given input array nums = [3,2,2,3], val = 3</p>
-<p>Your function should return length = 2, with the first two elements of nums being 2.               </p>
-<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code>class Solution(object):
-    def removeElement(self, nums, val):
+<p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …  </p>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.  </p>
+<p>Note: The sequence of integers will be represented as a string.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def countAndSay(self, n):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
+        :type n: int
+        :rtype: str
         &quot;&quot;&quot;
-        i=0
-        while i&lt;len(nums):
-            if nums[i]==val:
-                nums.pop(i)
-                i-=1
-            i+=1
-        return len(nums)        
-</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 72 ms<br>Ranking: beats 5.50%</p>
-<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2 :"></a>Code 2 :</h2><pre><code>class Solution(object):
-    def removeElement(self, nums, val):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
-        &quot;&quot;&quot;
-        p1,p2=0,len(nums)-1
-        if p2&lt;1 and val in nums:
-            return 0
-        while p1&lt;=p2:
-            if nums[p2]==val:
-                p2-=1
-                continue
-            elif nums[p1]!=val:
-                p1+=1
-                continue
-            else:
-                nums[p1],nums[p2]=nums[p2],nums[p1]
-        return p2+1        
-</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 64 ms<br>Ranking: beats 18.83%</p>
+        def fun(s):
+            p1,p2=0,0
+            re=&apos;&apos;
+            for i,v in enumerate(s):
+                p2=i
+                if s[p1]==s[p2]:
+                    continue
+                else:
+                    re=re+str(p2-p1)+s[p1]
+                    p1=p2
+            re=re+str(p2-p1+1)+s[p1]
+            return re
+
+        s=str(1)
+        for i in range(n-1):
+            s=fun(s)
+        return s     
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 48 ms<br>Ranking: beats 81.75% </p>
 
       
     </div>
@@ -288,13 +274,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/LeetCode-27. Remove Element/">[LeetCode] 27. Remove Element </a></p>
+        <p><span>本文标题:</span><a href="/LeetCode-38. Count and Say/">[LeetCode] 38. Count and Say </a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tsumy 的个人博客">tsumy</a></p>
-        <p><span>发布时间:</span>2016年08月19日 - 11时17分</p>
-        <p><span>最后更新:</span>2016年08月19日 - 11时17分</p>
+        <p><span>发布时间:</span>2016年08月20日 - 20时11分</p>
+        <p><span>最后更新:</span>2016年08月20日 - 20时12分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/LeetCode-27. Remove Element/" title="[LeetCode] 27. Remove Element ">http://tsumy.site/LeetCode-27. Remove Element/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/LeetCode-27. Remove Element/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/LeetCode-38. Count and Say/" title="[LeetCode] 38. Count and Say ">http://tsumy.site/LeetCode-38. Count and Say/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/LeetCode-38. Count and Say/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -307,18 +293,18 @@
 
 <nav id="article-nav">
   
-    <a href="/LeetCode-28. Implement strStr()/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/LeetCode-67. Add Binary/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          [LeetCode] 28. Implement strStr() 
+          [LeetCode] 67. Add Binary 
         
       </div>
     </a>
   
   
-    <a href="/LeetCode-26. Remove Duplicates from Sorted Array/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[LeetCode] 26. Remove Duplicates from Sorted Array </div>
+    <a href="/LeetCode-6.ZigZag Conversion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[LeetCode] 6. ZigZag Conversion</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -329,7 +315,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Discription"><span class="toc-number">1.</span> <span class="toc-text">Discription:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">2.</span> <span class="toc-text">Analyze:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-1"><span class="toc-number">3.</span> <span class="toc-text">Code 1 :</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result"><span class="toc-number">3.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-2"><span class="toc-number">4.</span> <span class="toc-text">Code 2 :</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result-1"><span class="toc-number">4.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Discription"><span class="toc-number">1.</span> <span class="toc-text">Discription:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">2.</span> <span class="toc-text">Analyze:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-1"><span class="toc-number">3.</span> <span class="toc-text">Code 1:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result"><span class="toc-number">3.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -377,7 +363,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="LeetCode-27. Remove Element/" data-title="[LeetCode] 27. Remove Element " data-url="http://tsumy.site/LeetCode-27. Remove Element/"></div>
+    <div class="ds-thread" data-thread-key="LeetCode-38. Count and Say/" data-title="[LeetCode] 38. Count and Say " data-url="http://tsumy.site/LeetCode-38. Count and Say/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -400,13 +386,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/LeetCode-28. Implement strStr()/" title="上一篇: [LeetCode] 28. Implement strStr() ">
+            <a href="/LeetCode-67. Add Binary/" title="上一篇: [LeetCode] 67. Add Binary ">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/LeetCode-26. Remove Duplicates from Sorted Array/" title="下一篇: [LeetCode] 26. Remove Duplicates from Sorted Array ">
+            <a href="/LeetCode-6.ZigZag Conversion/" title="下一篇: [LeetCode] 6. ZigZag Conversion">
                 <i class="fa fa-angle-right"></i>
             </a>
         

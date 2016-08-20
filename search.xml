@@ -4,6 +4,271 @@
   
     
     <entry>
+      <title><![CDATA[[LeetCode] 160. Intersection of Two Linked Lists ]]></title>
+      <url>http://tsumy.site/LeetCode-160.%20Intersection%20of%20Two%20Linked%20Lists/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Write a program to find the node at which the intersection of two singly linked lists begins.</p>
+<p>For example, the following two linked lists:</p>
+<p>A: &emsp;&emsp;   a1 → a2<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;↘<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;c1 → c2 → c3<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  &emsp; ↗<br>B:     b1 → b2 → b3<br>begin to intersect at node c1.</p>
+<p>Notes:</p>
+<ul>
+<li>If the two linked lists have no intersection at all, return null.  </li>
+<li>The linked lists must retain their original structure after the function returns.  </li>
+<li>You may assume there are no cycles anywhere in the entire linked structure.  </li>
+<li>Your code should preferably run in O(n) time and use only O(1) memory.  </li>
+</ul>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><p>Let list a is 1 → 2 → 3 → 4 → 5 → 6 → 7 and list b is 1 → 2 → 5 → 6 → 7 , they have different lengths.<br>Note that new list A which is a joined with b and new list B which is b joined with a have the same lengths.<br>A:1 → 2 → 3 → 4 → 5 → 6 → 7 → 1 → 2 → 5 → 6 → 7<br>B:1 → 2 → 5 → 6 → 7 → 1 → 2 → 3 → 4 → 5 → 6 → 7<br>There are two kinds of situations：</p>
+<ul>
+<li>If a and b have intersection, then A and B will have some same node at the end of the list.Like above case, A and B have the same nodes 5 → 6 → 7   </li>
+<li>If a and b have no intersection at all, like a is 1 → 2 → 3 → 4 → 5  and b is 6 → 7 → 8 → 9.<br>A:1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9<br>B:6 → 7 → 8 → 9 → 1 → 2 → 3 → 4 → 5 &emsp;&emsp;&emsp;In this case, A and B have no same node.  </li>
+</ul>
+<p>Therefore, the original problem convert to a easy one: whether A and B linked list have same node, where A and B have same lengths.</p>
+<pre><code>#Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+#Generate a linked list by a list and return the head node
+def gen_ListNode(li):
+    if not li:
+        return None
+    head=ListNode(li.pop(0))
+    tmp=head
+    while li:
+            tmp.next=ListNode(li.pop(0))
+            tmp=tmp.next
+    return head
+#Print a linked list from head to tail
+def show_List(head):
+    if not head:
+        print empty
+    while head:
+        print head.val,
+        if head.next:
+            print &apos;→&apos;,
+        head=head.next
+    print 
+
+
+head=gen_ListNode([1,2,3,4,5,6,7])
+show_List(head)
+
+1 → 2 → 3 → 4 → 5 → 6 → 7
+</code></pre><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def getIntersectionNode(self, headA, headB):
+        &quot;&quot;&quot;
+        :type head1, head1: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+        if not headA or not headB:
+            return None
+        pa,pb=headA,headB
+        while pa is not pb:
+            if pa:
+                pa=pa.next
+            else:
+                pa=headB
+            if pb:
+                pb=pb.next
+            else:
+                pb=headA
+        return pa
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 420 ms<br>Ranking: beats 25.27% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 104. Maximum Depth of Binary Tree ]]></title>
+      <url>http://tsumy.site/LeetCode-104.%20Maximum%20Depth%20of%20Binary%20Tree/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><pre><code>#Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+#Generate a binary tree by a list ( like, [1,2,None,4,5,6,None,8,9,10,11,12] ) and return the root node.   
+def gen_Tree(val_list):
+        if not val_list:
+            return 
+        root=TreeNode(val_list.pop(0))
+        #print root.val
+        le_list=[root]
+        while val_list:
+            tmp=le_list.pop(0)
+            if val_list:
+                tmp.left=TreeNode(val_list.pop(0))
+                if tmp.left.val!=None:
+                    le_list.append(tmp.left)
+            if val_list:
+                tmp.right=TreeNode(val_list.pop(0))
+                if tmp.right.val!=None:
+                    le_list.append(tmp.right)
+            else:
+                return root
+        return root
+
+
+# print the tree by level
+def show_Tree(root):
+    def print_fun(le):
+        for i in le:
+            if i!=None:
+                print i.val,
+            else:
+                print &apos;None&apos;,
+        print &apos;&apos;
+    cur_le=[root]
+    next_le=[]
+    print_fun(cur_le)
+    while cur_le:        
+        tmp=cur_le.pop(0)
+        if tmp!=None:# and tmp.val!=None:
+            if tmp.left:
+                next_le.append(tmp.left)
+            else:
+                next_le.append(None)
+            if tmp.right:
+                next_le.append(tmp.right)
+            else:
+                next_le.append(None)
+        if not cur_le:
+            cur_le=next_le
+            print_fun(cur_le)
+            next_le=[]
+            if not cur_le:
+                break            
+    return
+
+
+root=gen_Tree([1,2,None,4,5,6,None,8,9,10,11,12])
+show_Tree(root)
+
+1 
+2 None 
+4 5 None None 
+6 None 8 9 
+10 11 None None 12 None None None 
+None None None None None None 
+</code></pre><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def maxDepth(self,root):
+        if not root:
+            return 0
+        queue,hei,max_hei=[],1,1
+        queue.append((root,1))
+        while queue:
+            node,hei=queue.pop(0)
+            max_hei=max(max_hei,hei)
+            if node.left:
+                queue.append((node.left,hei+1))
+            if node.right:
+                queue.append((node.right,hei+1))
+        max_hei=max(max_hei,hei)
+        return max_hei
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 68 ms<br>Ranking: beats 71.09% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 67. Add Binary ]]></title>
+      <url>http://tsumy.site/LeetCode-67.%20Add%20Binary/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/add-binary/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Given two binary strings, return their sum (also a binary string).</p>
+<p>For example,<br>a = “11”<br>b = “1”<br>Return “100”.</p>
+<h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def addBinary(self, a, b):
+        &quot;&quot;&quot;
+        :type a: str
+        :type b: str
+        :rtype: str
+        &quot;&quot;&quot;
+        la =len(a)
+        lb=len(b)
+        if la&lt;lb:
+            return self.addBinary(b,a)
+        b=&apos;0&apos;*(la-lb)+b
+        carry=0
+        a=list(a)
+        for i in range(la-1,-1,-1):
+            sum=int(a[i])+int(b[i])+carry
+            if sum==1 or sum==0:
+                a[i]=str(sum)
+                carry=0
+            else:
+                a[i]=str(sum-2)
+                carry=1
+        if carry==1:
+            return &apos;1&apos;+&apos;&apos;.join(a)
+        return &apos;&apos;.join(a)
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 80 ms<br>Ranking: beats 22.46% </p>
+<h2 id="Code-2（recursive-function）"><a href="#Code-2（recursive-function）" class="headerlink" title="Code 2（recursive function）:"></a>Code 2（recursive function）:</h2><pre><code>class Solution(object):
+    def addBinary(self, a, b):
+        &quot;&quot;&quot;
+        :type a: str
+        :type b: str
+        :rtype: str
+        &quot;&quot;&quot;
+        if len(a)==0: return b
+        if len(b)==0: return a
+        if a[-1] == &apos;1&apos; and b[-1] == &apos;1&apos;:
+            return self.addBinary(self.addBinary(a[0:-1], b[0:-1]), &apos;1&apos;) + &apos;0&apos;
+        else:
+            return self.addBinary(a[0:-1], b[0:-1]) + str(int(a[-1]) + int(b[-1]))
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 72 ms<br>Ranking: beats 44.74% </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 38. Count and Say ]]></title>
+      <url>http://tsumy.site/LeetCode-38.%20Count%20and%20Say/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …  </p>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.  </p>
+<p>Note: The sequence of integers will be represented as a string.</p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def countAndSay(self, n):
+        &quot;&quot;&quot;
+        :type n: int
+        :rtype: str
+        &quot;&quot;&quot;
+        def fun(s):
+            p1,p2=0,0
+            re=&apos;&apos;
+            for i,v in enumerate(s):
+                p2=i
+                if s[p1]==s[p2]:
+                    continue
+                else:
+                    re=re+str(p2-p1)+s[p1]
+                    p1=p2
+            re=re+str(p2-p1+1)+s[p1]
+            return re
+
+        s=str(1)
+        for i in range(n-1):
+            s=fun(s)
+        return s     
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 48 ms<br>Ranking: beats 81.75% </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[[LeetCode] 6. ZigZag Conversion]]></title>
       <url>http://tsumy.site/LeetCode-6.ZigZag%20Conversion/</url>
       <content type="html"><![CDATA[<!--以上是摘要-->
@@ -191,56 +456,6 @@ the ith char in text will assigned to the row which NO. is the value of the ith 
     </entry>
     
     <entry>
-      <title><![CDATA[[LeetCode] 21. Merge Two Sorted Lists ]]></title>
-      <url>http://tsumy.site/LeetCode-21.%20Merge%20Two%20Sorted%20Lists/</url>
-      <content type="html"><![CDATA[<!--以上是摘要-->
-<a id="more"></a>
-<!--以下是余下全文-->
-<p><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Leetcode link for this question</a></p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><font size="3">Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</font><br>## Analyze:<br><br><br>## Code 1 :<br><br><br>    # Definition for singly-linked list.<br>    # class ListNode(object):<br>    #     def <strong>init</strong>(self, x):<br>    #         self.val = x<br>    #         self.next = None<br><br>    class Solution(object):<br>        def mergeTwoLists(self, l1, l2):<br>            “””<br>            :type l1: ListNode<br>            :type l2: ListNode<br>            :rtype: ListNode<br>            “””<br>            head=ListNode(0)<br>            tail=head<br>            while l1 and l2:<br>                if l1.val &gt; l2.val:<br>                    tail.next=l2<br>                    l2=l2.next<br>                else:<br>                    tail.next=l1<br>                    l1=l1.next<br>                tail=tail.next<br>            if l1 is None:<br>                tail.next=l2<br>            else:<br>                tail.next=l1<br>            return head.next<br><br>### Submission Result:<br>Status: Accepted<br>Runtime: 52 ms<br>Ranking: beats <font size="3" color="red">97.5%</font> 
-
-
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[[LeetCode] 24. Swap Nodes in Pairs ]]></title>
-      <url>http://tsumy.site/LeetCode-24.%20Swap%20Nodes%20in%20Pairs/</url>
-      <content type="html"><![CDATA[<!--以上是摘要-->
-<a id="more"></a>
-<!--以下是余下全文-->
-<p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank" rel="external">Leetcode link for this question</a></p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given a linked list, swap every two adjacent nodes and return its head.</font></p>
-<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
-<p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.               </p>
-<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code># Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution(object):
-    def swapPairs(self, head):
-        &quot;&quot;&quot;
-        :type head: ListNode
-        :rtype: ListNode
-        &quot;&quot;&quot;
-
-        link=ListNode(0)
-        link.next=head
-        tail=link
-        while tail.next and tail.next.next:
-            a=tail.next
-            b=a.next
-            tail.next,a.next,b.next=b,b.next,a
-            tail=a
-
-        return link.next  
-</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 44 ms<br>Ranking: beats 81.51%</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[[LeetCode] 26. Remove Duplicates from Sorted Array ]]></title>
       <url>http://tsumy.site/LeetCode-26.%20Remove%20Duplicates%20from%20Sorted%20Array/</url>
       <content type="html"><![CDATA[<!--以上是摘要-->
@@ -283,6 +498,56 @@ class Solution(object):
                 i+=1
         return len(nums)
 </code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 144 ms<br>Ranking: beats 17.31%</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 24. Swap Nodes in Pairs ]]></title>
+      <url>http://tsumy.site/LeetCode-24.%20Swap%20Nodes%20in%20Pairs/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given a linked list, swap every two adjacent nodes and return its head.</font></p>
+<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
+<p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.               </p>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def swapPairs(self, head):
+        &quot;&quot;&quot;
+        :type head: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+
+        link=ListNode(0)
+        link.next=head
+        tail=link
+        while tail.next and tail.next.next:
+            a=tail.next
+            b=a.next
+            tail.next,a.next,b.next=b,b.next,a
+            tail=a
+
+        return link.next  
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 44 ms<br>Ranking: beats 81.51%</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[[LeetCode] 21. Merge Two Sorted Lists ]]></title>
+      <url>http://tsumy.site/LeetCode-21.%20Merge%20Two%20Sorted%20Lists/</url>
+      <content type="html"><![CDATA[<!--以上是摘要-->
+<a id="more"></a>
+<!--以下是余下全文-->
+<p><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><font size="3">Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</font><br>## Analyze:<br><br><br>## Code 1 :<br><br><br>    # Definition for singly-linked list.<br>    # class ListNode(object):<br>    #     def <strong>init</strong>(self, x):<br>    #         self.val = x<br>    #         self.next = None<br><br>    class Solution(object):<br>        def mergeTwoLists(self, l1, l2):<br>            “””<br>            :type l1: ListNode<br>            :type l2: ListNode<br>            :rtype: ListNode<br>            “””<br>            head=ListNode(0)<br>            tail=head<br>            while l1 and l2:<br>                if l1.val &gt; l2.val:<br>                    tail.next=l2<br>                    l2=l2.next<br>                else:<br>                    tail.next=l1<br>                    l1=l1.next<br>                tail=tail.next<br>            if l1 is None:<br>                tail.next=l2<br>            else:<br>                tail.next=l1<br>            return head.next<br><br>### Submission Result:<br>Status: Accepted<br>Runtime: 52 ms<br>Ranking: beats <font size="3" color="red">97.5%</font> 
+
+
 ]]></content>
     </entry>
     

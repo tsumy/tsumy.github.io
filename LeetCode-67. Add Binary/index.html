@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[LeetCode] 27. Remove Element  | tsumy&#39;blog</title>
+  <title>[LeetCode] 67. Add Binary  | tsumy&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 27. Remove Element ">
-<meta property="og:url" content="http://tsumy.site/LeetCode-27. Remove Element/index.html">
+<meta property="og:title" content="[LeetCode] 67. Add Binary ">
+<meta property="og:url" content="http://tsumy.site/LeetCode-67. Add Binary/index.html">
 <meta property="og:site_name" content="tsumy'blog">
-<meta property="og:updated_time" content="2016-08-19T03:17:08.261Z">
+<meta property="og:updated_time" content="2016-08-20T12:13:07.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 27. Remove Element ">
+<meta name="twitter:title" content="[LeetCode] 67. Add Binary ">
   
     <link rel="alternative" href="/atom.xml" title="tsumy&#39;blog" type="application/atom+xml">
   
@@ -197,11 +197,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-27. Remove Element" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-67. Add Binary" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/LeetCode-27. Remove Element/" class="article-date">
-      <time datetime="2016-08-19T03:17:52.000Z" itemprop="datePublished">2016-08-19</time>
+      <a href="/LeetCode-67. Add Binary/" class="article-date">
+      <time datetime="2016-08-20T12:12:52.000Z" itemprop="datePublished">2016-08-20</time>
 </a>
     </div>
   
@@ -214,7 +214,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [LeetCode] 27. Remove Element 
+      [LeetCode] 67. Add Binary 
     </h1>
   
 
@@ -238,48 +238,49 @@
         <!--以上是摘要-->
 <a id="more"></a>
 <!--以下是余下全文-->
-<p><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="external">Leetcode link for this question</a></p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p><font size="3">Given an array and a value, remove all instances of that value in place and return the new length.</font></p>
-<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
-<p>Example:<br>Given input array nums = [3,2,2,3], val = 3</p>
-<p>Your function should return length = 2, with the first two elements of nums being 2.               </p>
-<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze:"></a>Analyze:</h2><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1 :"></a>Code 1 :</h2><pre><code>class Solution(object):
-    def removeElement(self, nums, val):
+<p><a href="https://leetcode.com/problems/add-binary/" target="_blank" rel="external">Leetcode link for this question</a></p>
+<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription:"></a>Discription:</h2><p>Given two binary strings, return their sum (also a binary string).</p>
+<p>For example,<br>a = “11”<br>b = “1”<br>Return “100”.</p>
+<h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code 1:"></a>Code 1:</h2><pre><code>class Solution(object):
+    def addBinary(self, a, b):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
+        :type a: str
+        :type b: str
+        :rtype: str
         &quot;&quot;&quot;
-        i=0
-        while i&lt;len(nums):
-            if nums[i]==val:
-                nums.pop(i)
-                i-=1
-            i+=1
-        return len(nums)        
-</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 72 ms<br>Ranking: beats 5.50%</p>
-<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code 2 :"></a>Code 2 :</h2><pre><code>class Solution(object):
-    def removeElement(self, nums, val):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
-        &quot;&quot;&quot;
-        p1,p2=0,len(nums)-1
-        if p2&lt;1 and val in nums:
-            return 0
-        while p1&lt;=p2:
-            if nums[p2]==val:
-                p2-=1
-                continue
-            elif nums[p1]!=val:
-                p1+=1
-                continue
+        la =len(a)
+        lb=len(b)
+        if la&lt;lb:
+            return self.addBinary(b,a)
+        b=&apos;0&apos;*(la-lb)+b
+        carry=0
+        a=list(a)
+        for i in range(la-1,-1,-1):
+            sum=int(a[i])+int(b[i])+carry
+            if sum==1 or sum==0:
+                a[i]=str(sum)
+                carry=0
             else:
-                nums[p1],nums[p2]=nums[p2],nums[p1]
-        return p2+1        
-</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 64 ms<br>Ranking: beats 18.83%</p>
+                a[i]=str(sum-2)
+                carry=1
+        if carry==1:
+            return &apos;1&apos;+&apos;&apos;.join(a)
+        return &apos;&apos;.join(a)
+</code></pre><h3 id="Submission-Result"><a href="#Submission-Result" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 80 ms<br>Ranking: beats 22.46% </p>
+<h2 id="Code-2（recursive-function）"><a href="#Code-2（recursive-function）" class="headerlink" title="Code 2（recursive function）:"></a>Code 2（recursive function）:</h2><pre><code>class Solution(object):
+    def addBinary(self, a, b):
+        &quot;&quot;&quot;
+        :type a: str
+        :type b: str
+        :rtype: str
+        &quot;&quot;&quot;
+        if len(a)==0: return b
+        if len(b)==0: return a
+        if a[-1] == &apos;1&apos; and b[-1] == &apos;1&apos;:
+            return self.addBinary(self.addBinary(a[0:-1], b[0:-1]), &apos;1&apos;) + &apos;0&apos;
+        else:
+            return self.addBinary(a[0:-1], b[0:-1]) + str(int(a[-1]) + int(b[-1]))
+</code></pre><h3 id="Submission-Result-1"><a href="#Submission-Result-1" class="headerlink" title="Submission Result:"></a>Submission Result:</h3><p>Status: Accepted<br>Runtime: 72 ms<br>Ranking: beats 44.74% </p>
 
       
     </div>
@@ -288,13 +289,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/LeetCode-27. Remove Element/">[LeetCode] 27. Remove Element </a></p>
+        <p><span>本文标题:</span><a href="/LeetCode-67. Add Binary/">[LeetCode] 67. Add Binary </a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tsumy 的个人博客">tsumy</a></p>
-        <p><span>发布时间:</span>2016年08月19日 - 11时17分</p>
-        <p><span>最后更新:</span>2016年08月19日 - 11时17分</p>
+        <p><span>发布时间:</span>2016年08月20日 - 20时12分</p>
+        <p><span>最后更新:</span>2016年08月20日 - 20时13分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/LeetCode-27. Remove Element/" title="[LeetCode] 27. Remove Element ">http://tsumy.site/LeetCode-27. Remove Element/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/LeetCode-27. Remove Element/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/LeetCode-67. Add Binary/" title="[LeetCode] 67. Add Binary ">http://tsumy.site/LeetCode-67. Add Binary/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://tsumy.site/LeetCode-67. Add Binary/　　作者: tsumy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -307,18 +308,18 @@
 
 <nav id="article-nav">
   
-    <a href="/LeetCode-28. Implement strStr()/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/LeetCode-104. Maximum Depth of Binary Tree/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          [LeetCode] 28. Implement strStr() 
+          [LeetCode] 104. Maximum Depth of Binary Tree 
         
       </div>
     </a>
   
   
-    <a href="/LeetCode-26. Remove Duplicates from Sorted Array/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[LeetCode] 26. Remove Duplicates from Sorted Array </div>
+    <a href="/LeetCode-38. Count and Say/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[LeetCode] 38. Count and Say </div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -329,7 +330,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Discription"><span class="toc-number">1.</span> <span class="toc-text">Discription:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">2.</span> <span class="toc-text">Analyze:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-1"><span class="toc-number">3.</span> <span class="toc-text">Code 1 :</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result"><span class="toc-number">3.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-2"><span class="toc-number">4.</span> <span class="toc-text">Code 2 :</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result-1"><span class="toc-number">4.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Discription"><span class="toc-number">1.</span> <span class="toc-text">Discription:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-1"><span class="toc-number">2.</span> <span class="toc-text">Code 1:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result"><span class="toc-number">2.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-2（recursive-function）"><span class="toc-number">3.</span> <span class="toc-text">Code 2（recursive function）:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Submission-Result-1"><span class="toc-number">3.1.</span> <span class="toc-text">Submission Result:</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -377,7 +378,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="LeetCode-27. Remove Element/" data-title="[LeetCode] 27. Remove Element " data-url="http://tsumy.site/LeetCode-27. Remove Element/"></div>
+    <div class="ds-thread" data-thread-key="LeetCode-67. Add Binary/" data-title="[LeetCode] 67. Add Binary " data-url="http://tsumy.site/LeetCode-67. Add Binary/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -400,13 +401,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/LeetCode-28. Implement strStr()/" title="上一篇: [LeetCode] 28. Implement strStr() ">
+            <a href="/LeetCode-104. Maximum Depth of Binary Tree/" title="上一篇: [LeetCode] 104. Maximum Depth of Binary Tree ">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/LeetCode-26. Remove Duplicates from Sorted Array/" title="下一篇: [LeetCode] 26. Remove Duplicates from Sorted Array ">
+            <a href="/LeetCode-38. Count and Say/" title="下一篇: [LeetCode] 38. Count and Say ">
                 <i class="fa fa-angle-right"></i>
             </a>
         
